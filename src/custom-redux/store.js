@@ -7,7 +7,6 @@ class Store {
   constructor(reducer, defaultState = {}) {
     this.reducer = reducer;
     this.state = defaultState;
-    this.reducer();
   }
 
   subscribe(callback) {
