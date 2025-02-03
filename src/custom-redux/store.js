@@ -11,7 +11,6 @@ class Store {
 
   subscribe(callback) {
     this.subscribers.set(callback, callback);
-    callback(this.state);
   }
 
   unsubscribe(callback) {
@@ -19,7 +18,7 @@ class Store {
   }
 
   sendChanges() {
-    [...this.subscribers.values()].forEach((callback) => {
+    this.subscribers.values().forEach((callback) => {
       callback(this.state);
     });
   }

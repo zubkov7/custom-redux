@@ -2,7 +2,7 @@ import { createStore } from "../custom-redux/store";
 
 const defaultState = { count: 0, text: "constant text" };
 
-const rootReducer = (state = defaultState, action) => {
+const rootReducer = (state, action) => {
   switch (action?.type) {
     case "increment":
       return {

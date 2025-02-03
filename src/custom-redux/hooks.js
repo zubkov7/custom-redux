@@ -1,14 +1,14 @@
-import { useContext, useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { StoreContext } from "./context";
 
 export function useDispatch() {
-  const store = useContext(StoreContext);
+  const store = use(StoreContext);
 
   return store.dispatch.bind(store);
 }
 
 export function useSelector(selector) {
-  const store = useContext(StoreContext);
+  const store = use(StoreContext);
   const [value, setValue] = useState(() => selector(store.state));
 
   useEffect(() => {
